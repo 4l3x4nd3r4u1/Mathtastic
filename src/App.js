@@ -1,5 +1,5 @@
 import React from 'react';
-import {Flex, Container, VStack} from '@chakra-ui/react'
+import {Container, VStack} from '@chakra-ui/react'
 import Navigation from './components/navigation'
 import Home from './pages/home'
 import Introduction from './pages/introduction'
