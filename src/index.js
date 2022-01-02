@@ -1,3 +1,6 @@
+import '@fontsource/raleway/400.css';
+import '@fontsource/space-mono/400.css'
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -7,7 +10,6 @@ import {ChakraProvider} from '@chakra-ui/react'
 import {BrowserRouter} from 'react-router-dom';
 import theme from './theme';
 import './styles.css';
-import '@fontsource/space-mono'
 
 
 ReactDOM.render(

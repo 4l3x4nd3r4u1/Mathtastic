@@ -1,9 +1,9 @@
-import { extendTheme, theme as base} from '@chakra-ui/react';
+import { extendTheme} from '@chakra-ui/react';
 
 const theme = extendTheme({
   fonts: {
-    heading: `Space Mono ${base.fonts?.heading}`,
-    body: `Space Mono ${base.fonts?.body}`
+    heading: 'Space Mono',
+    body: 'Raleway',
   }, 
 })
 
