@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
-import {Container, VStack, Heading, Text, Input, Flex } from '@chakra-ui/react';
+import {Container, VStack, Heading, Text, Input, Flex, HStack } from '@chakra-ui/react';
 import intToRoman from '../logic/intToRoman'
 import romanToInt from '../logic/romanToInt'
+import Hexagon from '../components/hexagon';
 
 const randomRow = Math.ceil((Math.random() * 5) + 3);
 const pascalRow = [];
@@ -42,7 +43,21 @@ const PascalTriangle = () => {
         </Container>
         <Input value={value} onChange={handleChage} placeholder='Respuesta: VII' variant='filled' />
       </VStack>
-      <VStack w='full' h='full' p={5} justifyContent='center' alignItems='center' spacing={10}>
+      <VStack w='full' h='full' p={5} alignItems='center' spacing={0} justify='center'>
+        <HStack >
+          <Hexagon delay={1000}/>
+        </HStack>
+
+        <HStack spacing={0}>
+          <Hexagon delay={2000}/>
+          <Hexagon delay={2000}/>
+        </HStack>
+
+        <HStack spacing={0}>
+          <Hexagon delay={3000}/>
+          <Hexagon delay={4000}/>
+          <Hexagon delay={3000}/>
+        </HStack>
       </VStack>
     </Flex>
   );
