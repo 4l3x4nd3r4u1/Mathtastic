@@ -11,7 +11,7 @@ const Hexagon = ({delay}) => {
       easing: 'easeInOutExpo',
       delay: delay
     });
-  }, []);
+  }, [delay]);
 
   return (
     <svg width="80" height="80" viewBox="0 0 128 128" fill='teal'>
