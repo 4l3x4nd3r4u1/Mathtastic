@@ -9,4 +9,5 @@ const MagicGame = () => {
   );
 };
 
+
 export default MagicGame;

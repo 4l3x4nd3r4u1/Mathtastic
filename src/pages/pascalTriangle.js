@@ -4,6 +4,7 @@ import intToRoman from '../logic/intToRoman'
 import romanToInt from '../logic/romanToInt'
 import Hexagon from '../components/hexagon';
 import {motion} from 'framer-motion';
+import Notification from '../components/toastNotification';
 
 const MotionFlex = motion(Flex);
 const variants = { 
@@ -32,11 +33,12 @@ computePascalRow();
 
 const PascalTriangle = () => {
   const [value, setValue] = useState('');
+  const [isOver, setIsOver] = useState(false);
 
   const handleChage = (event) => {
     setValue(event.target.value);
     if (event.target.value.toLowerCase() === intToRoman(answer).toLowerCase())
-      setTimeout(() => alert('gaa'), 300);
+      setIsOver(true);
   };
 
   return (
@@ -50,6 +52,9 @@ const PascalTriangle = () => {
           <Text>Value: {romanToInt(value.toUpperCase())}</Text>
         </Container>
         <Input value={value} onChange={handleChage} placeholder='Respuesta: VII' variant='filled' />
+        {
+          isOver && <Notification title="puzzle resuelto" description="Pascal Triangle resuelto" />
+        }
       </VStack>
       <VStack w='full' h='full' p={5} alignItems='center' spacing={0} justify='center'>
         <HStack >

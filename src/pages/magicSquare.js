@@ -11,8 +11,8 @@ const variants = {
   exit: { opacity: 0, x: 0, y: 20 }
 }
 
-const rowContent = "|?| + |?| + |?| = 15";
-const columnContent = 'put column reference here';
+const rowContent = '| ? | + | ? | + | ? | = 15';
+const columnContent = '| ? | + | ? | + | ? | = 15'
 
 const MagicSquare = () => {
   return (
@@ -26,8 +26,8 @@ const MagicSquare = () => {
           </Text>
         </Container>
           <HStack>
-            <Reference title='Fila' value={rowContent} />
-            <Reference title='Columna' value={columnContent} />
+            <Reference title='Fila =  >' value={rowContent} />
+            <Reference title='Columna =  v' value={columnContent} />
           </HStack>
         </VStack>
         <VStack w='full' h='full' justify='center'>

@@ -7,7 +7,7 @@ import {
   PopoverBody,
   PopoverArrow,
   PopoverCloseButton,
-  Button
+  Button,
 } from '@chakra-ui/react'
 
 const Reference = ({title, value}) => {
@@ -20,7 +20,9 @@ const Reference = ({title, value}) => {
         <PopoverArrow />
         <PopoverCloseButton />
         <PopoverHeader>{title}</PopoverHeader>
-        <PopoverBody>{value}</PopoverBody>
+        <PopoverBody>
+          {value}
+        </PopoverBody>
       </PopoverContent>
     </Popover>
   );
