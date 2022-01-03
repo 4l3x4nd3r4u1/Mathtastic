@@ -1,5 +1,5 @@
-import '@fontsource/raleway/400.css';
 import '@fontsource/space-mono/400.css'
+import "@fontsource/jetbrains-mono"
 
 import React from 'react';
 import ReactDOM from 'react-dom';

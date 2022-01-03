@@ -17,13 +17,16 @@ const intros = [
 
 const Home = () => {
   return (
-    <MotionVStack initial='hidden' animate='enter' exit='exit' variants={variants} transition={{duration: 0.4, type: 'easeInOut'}}  w='full' h='full' justify='space-around'>
-      <MotionContainer
-        textAlign='center'
+    <MotionVStack
+      initial='hidden' animate='enter' exit='exit' variants={variants} transition={{duration: 0.4, type: 'easeInOut'}}
+      w='full' h='full' justify='space-around'>
+
+      <VStack
+        alignItems='flex-start'
       >
-        <Heading fontWeight='500' size='4xl'>MATHTASTIC</Heading>
+        <Heading fontWeight='500' size='3xl'>MATHTASTIC</Heading>
         <Text fontSize='lg' mt={6}>Prueba algunos puzzles matemáticos gratuitos</Text>
-      </MotionContainer>
+      </VStack>
 
       <MotionContainer
         initial={{y: 10, opacity: 0}}
@@ -38,4 +41,3 @@ const Home = () => {
 };
 
 export default Home
-

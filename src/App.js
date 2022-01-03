@@ -21,7 +21,7 @@ function App() {
 
   return (
     <Container maxW='container.lg'>
-      <VStack p={0} py={[0, 10, 20]} h='100vh' w='full'>
+      <VStack  py={[2, 4, 6]} h='100vh'>
         <AnimatePresence exitBeforeEnter initial={true}>
           <Routes location={location} key={location.pathname}>
             {

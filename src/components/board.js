@@ -3,7 +3,6 @@ import Square from "./square";
 import {SimpleGrid} from '@chakra-ui/react'
 import intToRoman from '../logic/intToRoman'
 import romanToInt from '../logic/romanToInt'
-import Notification from "./toastNotification";
 
 class Board extends Component {
   constructor(props) {
@@ -13,7 +12,6 @@ class Board extends Component {
       indexes: [],
       isOver: false
     }
-
   }
 
   handleClick(i) {
@@ -48,7 +46,6 @@ class Board extends Component {
 
   render() {
     return (
-      <>
         <SimpleGrid columns={3} spacing={3}>
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -60,8 +57,6 @@ class Board extends Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </SimpleGrid>
-        {this.state.isOver && <Notification title='Puzzle resuelto' description='Magic Square 15 resuelto pasa al siguiene puzzle'/>}
-      </>
     );
   }
 }
