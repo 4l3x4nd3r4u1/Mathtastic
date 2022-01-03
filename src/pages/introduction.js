@@ -3,8 +3,7 @@ import {HStack, VStack, Heading, Text, Container, ListItem, UnorderedList} from 
 import {motion} from 'framer-motion';
 
 const MotionHStack = motion(HStack);
-
-const variants = {
+const variants = { 
   hidden: { opacity: 0, x: 0, y: 20 }, 
   enter: { opacity: 1, x: 0, y: 0 }, 
   exit: { opacity: 0, x: 0, y: 20 }
@@ -12,7 +11,7 @@ const variants = {
 
 const Introduction = () => {
   return (
-    <MotionHStack initial='hidden' animate='enter' exit='exit' variants={variants} transition={{duration: 0.4, type: 'easeInOut'}} h='full' w='full'>
+    <MotionHStack initial='hidden' animate='enter' exit='exit' variants={variants} transition={{duration: 0.4, type: 'easeInOut'}}  h='full' w='full'>
       <VStack w='full' h='full' p={5} overflowY='auto'>
         <Heading  as='h1' fontWeight='500' size='2xl'>Introduction</Heading>
         <Container maxW='container.md' py={10} overflowY='auto'>

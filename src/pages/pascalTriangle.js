@@ -3,10 +3,10 @@ import {Container, VStack, Heading, Text, Input, Flex, HStack } from '@chakra-ui
 import intToRoman from '../logic/intToRoman'
 import romanToInt from '../logic/romanToInt'
 import Hexagon from '../components/hexagon';
-import {motion} from 'framer-motion'
+import {motion} from 'framer-motion';
 
 const MotionFlex = motion(Flex);
-const variants = {
+const variants = { 
   hidden: { opacity: 0, x: 0, y: 20 }, 
   enter: { opacity: 1, x: 0, y: 0 }, 
   exit: { opacity: 0, x: 0, y: 20 }
@@ -40,7 +40,7 @@ const PascalTriangle = () => {
   };
 
   return (
-    <MotionFlex initial='hidden' animate='enter' exit='exit' variants={variants} transition={{duration: 0.4, type: 'easeInOut'}} h='full' w='full' direction={{base: 'column', md: 'row'}}>
+    <MotionFlex initial='hidden' animate='enter' exit='exit' variants={variants}  transition={{duration:0.4, type: 'easeInOut'}} h='full' w='full' direction={{base: 'column', md: 'row'}}>
       <VStack w='full' h='full' padding={5} justifyContent='center' alignItems='center' spacing={5} overflowY='auto'>
         <Heading as='h1' fontWeight='500' size='2xl'>PΔSCΔL TRIΔNGLE</Heading>
         <Container textAlign='center' maxW='container.md'>

@@ -5,7 +5,7 @@ import Home from './pages/home'
 import Introduction from './pages/introduction'
 import PascalTriangle  from './pages/pascalTriangle'
 import MagicSquare from './pages/magicSquare'
-import { Route, Routes} from 'react-router-dom';
+import { Route, Routes, useLocation} from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 const routes = [
@@ -17,11 +17,13 @@ const routes = [
 
 
 function App() {
+  const location = useLocation();
+
   return (
     <Container maxW='container.lg'>
       <VStack p={0} py={[0, 10, 20]} h='100vh' w='full'>
-        <AnimatePresence exitBeforeEnter>
-          <Routes >
+        <AnimatePresence exitBeforeEnter initial={true}>
+          <Routes location={location} key={location.pathname}>
             {
               routes.map(({path, name, Component}) => (
                 <Route key={name} path={path} element={<Component />} />))

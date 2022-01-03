@@ -3,8 +3,7 @@ import {motion} from 'framer-motion'
 
 const MotionContainer = motion(Container);
 const MotionVStack = motion(VStack);
-
-const variants = {
+const variants = { 
   hidden: { opacity: 0, x: 0, y: 20 }, 
   enter: { opacity: 1, x: 0, y: 0 }, 
   exit: { opacity: 0, x: 0, y: 20 }
@@ -18,7 +17,7 @@ const intros = [
 
 const Home = () => {
   return (
-    <MotionVStack initial='hidden' animate='enter' exit='exit' variants={variants} transition={{duration: 0.4, type: 'easeInOut'}} w='full' h='full' justify='space-around'>
+    <MotionVStack initial='hidden' animate='enter' exit='exit' variants={variants} transition={{duration: 0.4, type: 'easeInOut'}}  w='full' h='full' justify='space-around'>
       <MotionContainer
         textAlign='center'
       >
