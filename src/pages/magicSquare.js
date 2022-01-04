@@ -30,9 +30,7 @@ const MagicSquare = () => {
         </MotionBox>
         <Heading as='h2' variant='section-title'>Puzzle:</Heading>
         <Container p={0}>
-          <Text >
-            Ordena la cuadrícula de manera que los números de todas las fila, columnas y diagonal sumen 15.
-          </Text>
+          <Text >Ordena la cuadrícula de manera que los números de todas las fila, columnas y diagonal sumen 15.</Text>
         </Container>
         <Flex  flexWrap='wrap' gap={2}>
           <Reference title='Fila ~>' value={target} />

@@ -3,6 +3,11 @@ import Square from "./square";
 import {SimpleGrid} from '@chakra-ui/react'
 import intToRoman from '../logic/intToRoman'
 import romanToInt from '../logic/romanToInt'
+import {
+  Alert,
+  AlertIcon,
+  Box
+} from '@chakra-ui/react'
 
 class Board extends Component {
   constructor(props) {
@@ -15,11 +20,8 @@ class Board extends Component {
   }
 
   handleClick(i) {
-    if (this.state.isOver) {
-      console.log('isOver');
-      return;
-    }
-
+    if (this.state.isOver) return;
+    
     let indexes = this.state.indexes.slice();
     indexes.push(i);
 
@@ -41,11 +43,23 @@ class Board extends Component {
   }
 
   renderSquare(i) {
-    return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)} />;
+    return (
+      <Square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)}
+      />
+    );
   }
 
   render() {
     return (
+      <>
+        <Box position='absolute' top='20'>
+          {this.state.isOver &&
+            <Alert status='success' variant='solid'>
+              <AlertIcon />Puzzle resuelto. Pasa al siguiente 
+            </Alert>}
+        </Box>
         <SimpleGrid columns={3} spacing={3}>
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -57,6 +71,7 @@ class Board extends Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </SimpleGrid>
+      </>
     );
   }
 }

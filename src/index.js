@@ -1,6 +1,3 @@
-import '@fontsource/space-mono/400.css'
-import "@fontsource/jetbrains-mono"
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -9,8 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import {ChakraProvider} from '@chakra-ui/react'
 import {BrowserRouter} from 'react-router-dom';
 import theme from './theme';
-import './styles.css';
 
+import '@fontsource/space-mono/400.css'
+import "@fontsource/jetbrains-mono"
 
 ReactDOM.render(
   <BrowserRouter>

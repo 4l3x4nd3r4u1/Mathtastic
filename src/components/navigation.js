@@ -1,11 +1,18 @@
 import {AiFillHome, AiFillBook} from 'react-icons/ai';
 import {BsFillGrid3X3GapFill} from 'react-icons/bs';
-import {useColorMode, HStack, Tooltip, IconButton, useColorModeValue, Box} from '@chakra-ui/react';
 import {SunIcon, MoonIcon} from '@chakra-ui/icons';
 import {GiBallPyramid} from 'react-icons/gi';
 import {NavLink} from 'react-router-dom';
 import {motion} from 'framer-motion'
 import { useState } from 'react';
+import {
+  useColorMode,
+  HStack,
+  Tooltip,
+  IconButton,
+  useColorModeValue,
+  Box
+} from '@chakra-ui/react';
 
 const MotionBox = motion(Box);
 
