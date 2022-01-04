@@ -1,18 +1,22 @@
 import React from 'react';
-import {Button} from '@chakra-ui/react'
+import {Button} from '@chakra-ui/react';
+import {motion} from 'framer-motion';
+
+const MotionButton = motion(Button);
 
 const Square = ({value, onClick}) => {
   return (
-    <Button
+    <MotionButton
+      whileHover={{scale: 1.1}}
       w='50px'
       h='50px'
       colorScheme='teal'
-      variant='outline'
       onClick={onClick}
     >
       {value}
-    </Button>
+    </MotionButton>
   );
 }
+
 
 export default Square;

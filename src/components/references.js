@@ -13,8 +13,8 @@ import {
 const Reference = ({title, value}) => {
   return (
     <Popover placement='top-start'>
-      <PopoverTrigger>
-        <Button>{title}</Button>
+      <PopoverTrigger >
+        <Button  colorScheme='teal' fontWeight='thin' >{title}</Button>
       </PopoverTrigger>
       <PopoverContent>
         <PopoverArrow />

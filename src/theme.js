@@ -21,7 +21,7 @@ const components = {
         textDecoration: 'underline',
         fontSize: 20,
         textUnderlineOffset: 6,
-        textDecorationColor: mode('purple', 'orange')(props),
+        textDecorationColor: mode('purple', '#88ccca')(props),
         TextDecorationThickness: 4,
         marginTop: 3,
         marginBottom: 4

@@ -18,7 +18,7 @@ const MagicSquare = () => {
   return (
     <MotionFlex
       initial='hidden' animate='enter' exit='exit' variants={variants} transition={{duration: 0.4, type: 'easeInOut'}}
-      h='full' w='full' direction={{base: 'column', md: 'row'}}
+      h='full' w='full' direction={{base: 'column', md: 'row'}} overflowY='auto'
     >
       <VStack pl={[0, 6, 16]} w='full' h='full' alignItems='flex-start' justify='center' spacing={5}>
         <MotionBox
@@ -42,6 +42,7 @@ const MagicSquare = () => {
       </VStack>
 
       <VStack
+        pt={[4, 0, 0]}
         w='full'
         h='full'
         justify='center'

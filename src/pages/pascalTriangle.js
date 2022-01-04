@@ -47,7 +47,7 @@ const PascalTriangle = () => {
       initial='hidden' animate='enter' exit='exit' variants={variants} transition={{duration: 0.4, type: 'easeInOut'}}
       h='full' w='full' direction={{base: 'column', md: 'row'}} overflowY='auto'
     >
-      <VStack w='full' h='full'  justify='center' alignItems='flex-start' spacing={2}>
+      <VStack w='full' h='full'  justify='center' alignItems='flex-start' spacing={2} pl={[0, 6, 16]}>
         <MotionBox
             initial={{y: 10, opacity: 0}}
             animate={{y: 0, opacity: 1}}
@@ -58,7 +58,7 @@ const PascalTriangle = () => {
         <Heading as='h2' variant='section-title'>Puzzle:</Heading>
         <Container p={0}>
           <Text>En el triangulo de Pascal, cada número es la suma de los dos números que
-            estan directamente encima, como se muestra hasta el nivel 3
+            estan directamente encima, como se muestra hasta el nivel 3.
           </Text>
           <Text>Calcula el nivel: {randomRow}, escribe la respueta en numeros romanos.</Text>
           <Text>Value: {romanToInt(value.toUpperCase())}</Text>
