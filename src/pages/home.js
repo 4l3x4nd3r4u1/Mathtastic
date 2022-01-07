@@ -1,6 +1,6 @@
-import {ChevronRightIcon} from '@chakra-ui/icons'
-import {motion} from 'framer-motion'
-import {Link} from 'react-router-dom';
+import { ChevronRightIcon } from '@chakra-ui/icons'
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom';
 import {
   useColorModeValue,
   Heading,
@@ -18,9 +18,9 @@ const MotionFlex = motion(Flex);
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
 
-const variants = { 
-  hidden: { opacity: 0, x: 0, y: 20 }, 
-  enter: { opacity: 1, x: 0, y: 0 }, 
+const variants = {
+  hidden: { opacity: 0, x: 0, y: 20 },
+  enter: { opacity: 1, x: 0, y: 0 },
   exit: { opacity: 0, x: 0, y: 20 }
 }
 
@@ -31,20 +31,20 @@ const Home = () => {
       animate='enter'
       exit='exit'
       variants={variants}
-      transition={{duration: 0.4, type: 'easeInOut'}}
-      direction={{base: 'column', md: 'row'}}
-      w='full' h='full' 
+      transition={{ duration: 0.4, type: 'easeInOut' }}
+      direction={{ base: 'column', md: 'row' }}
+      w='full' h='full'
     >
       <VStack
         pl={[0, 6, 16]}
         w='full' h='full' align='flex-start' justify='center' spacing={10}
       >
         <MotionBox
-          initial={{y: 10, opacity: 0}}
-          animate={{y: 0, opacity: 1}}
-          transition={{duration: 0.8, delay: 0.1}}
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <Heading fontWeight='bold' size='3xl'>MATHTASTIC</Heading>
+          <Heading fontWeight='bold' size='3xl'>MATHTASTIC 2.0</Heading>
           <Text fontWeight='thin' >Prueba algunos puzzles matemáticos gratuitos</Text>
         </MotionBox>
         <Stack
@@ -69,18 +69,18 @@ const Home = () => {
           <Divider orientation='vertical' />
           <VStack align='flex-start'>
             <MotionText
-              initial={{y: 10, opacity: 0}}
-              animate={{y: 0, opacity: 1}}
-              transition={{duration: 0.8, delay: 0.5}}
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
               fontSize='sm'
             >
               Magic Square 15
               <Badge ml='4' colorScheme='green' variant='outline'>New</Badge>
             </MotionText>
             <MotionText
-              initial={{y: 10, opacity: 0}}
-              animate={{y: 0, opacity: 1}}
-              transition={{duration: 0.8, delay: 0.8}}
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
               fontSize='sm'
             >
               Pascal Triangle
