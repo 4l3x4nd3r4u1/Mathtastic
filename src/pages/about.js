@@ -1,5 +1,16 @@
 import { motion } from 'framer-motion';
-import { Flex, Container, VStack, Stack, Heading, Text, Image } from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+import {
+  Flex,
+  Container,
+  VStack,
+  Stack,
+  Heading,
+  Text,
+  Image,
+  useColorModeValue,
+  Link
+} from '@chakra-ui/react';
 
 const MotionContainer = motion(Container);
 const MotionImage = motion(Image);
@@ -10,18 +21,50 @@ const variants = {
   exit: { opacity: 0, x: 0, y: 20 }
 }
 
-
 const About = () => {
+  const spanColor = useColorModeValue('purple', '#88ccca');
+
   return (
     <MotionContainer initial='hidden' animate='enter' exit='exit' variants={variants} transition={{ duration: 0.4, type: 'easeInOut' }}
       maxW='container.lg' h='full'>
       <Flex h='full' align='center'>
         <Stack as='main' align='flex-start' w='full' direction={['column-reverse', 'row']}>
           <VStack pl={[0, 6, 16]} align={['center', 'flex-start']}>
-            <Heading my={4} size='xl'>Alrexander Raul</Heading>
-            <Text textAlign={['center', 'left']}>Este sitio web está diseñado y desarrollado por Alrex GFR.</Text>
-            <Text textAlign={['center', 'left']}>El tech stack es ReactJS (todas las páginas generadas estáticamente),
-              Chakra UI y está desplegada en Vercel.</Text>
+            <Heading my={4} size='xl'>Alrexander G.</Heading>
+            <Text
+              textAlign={['center', 'left']}
+              opacity='0.9'
+            >
+              Este sitio web está diseñado y desarrollado por Alrex GFR.
+            </Text>
+            <Text
+              textAlign={['center', 'left']}
+              opacity='0.9'
+            >
+              El tech stack es
+              <Link
+                color={spanColor}
+                href='https://reactjs.org/'
+                isExternal
+              >
+                ReactJS <ExternalLinkIcon />
+              </Link>
+              (todas las páginas generadas estáticamente),
+              <Link
+                isExternal
+                color={spanColor}
+                href='https://chakra-ui.com/'
+              >
+                Chakra UI <ExternalLinkIcon />
+              </Link>
+              y está desplegada en
+              <Link
+                color={spanColor}
+                isExternal
+                href='https://vercel.com/'
+              >
+                Vercel <ExternalLinkIcon />
+              </Link>.</Text>
           </VStack>
           <VStack w='full'>
             <MotionImage
