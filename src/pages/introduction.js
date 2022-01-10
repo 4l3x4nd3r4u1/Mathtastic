@@ -1,5 +1,5 @@
 import React from 'react'
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   Box,
   Heading,
@@ -13,20 +13,20 @@ import {
 const MotionContainer = motion(Container);
 const MotionBox = motion(Box);
 
-const variants = { 
-  hidden: { opacity: 0, x: 0, y: 20 }, 
-  enter: { opacity: 1, x: 0, y: 0 }, 
+const variants = {
+  hidden: { opacity: 0, x: 0, y: 20 },
+  enter: { opacity: 1, x: 0, y: 0 },
   exit: { opacity: 0, x: 0, y: 20 }
 }
 
 const Introduction = () => {
   return (
     <MotionContainer alignItems='flex-start' paddingTop={4} px={0} overflowY='auto' maxW='container.md'
-      initial='hidden' animate='enter' exit='exit' variants={variants} transition={{duration: 0.4, type: 'easeInOut'}} h='full' w='full'>
+      initial='hidden' animate='enter' exit='exit' variants={variants} transition={{ duration: 0.4, type: 'easeInOut' }} h='full' w='full'>
       <MotionBox
-        initial={{y: 10, opacity: 0}}
-        animate={{y: 0, opacity: 1}}
-        transition={{duration: 0.8, delay: 0.1}}
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
 
         borderRadius='lg'
         w='full'

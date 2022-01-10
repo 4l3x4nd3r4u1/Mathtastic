@@ -1,9 +1,9 @@
-import {AiFillHome, AiFillBook} from 'react-icons/ai';
-import {BsFillGrid3X3GapFill} from 'react-icons/bs';
-import {SunIcon, MoonIcon} from '@chakra-ui/icons';
-import {GiBallPyramid} from 'react-icons/gi';
-import {NavLink} from 'react-router-dom';
-import {motion} from 'framer-motion'
+import { AiFillHome, AiFillBook } from 'react-icons/ai';
+import { BsFillGrid3X3GapFill } from 'react-icons/bs';
+import { SunIcon, MoonIcon } from '@chakra-ui/icons';
+import { GiBallPyramid } from 'react-icons/gi';
+import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion'
 import { useState } from 'react';
 import {
   useColorMode,
@@ -17,11 +17,11 @@ import {
 const MotionBox = motion(Box);
 
 const Navigation = () => {
-  const {toggleColorMode} = useColorMode();
+  const { toggleColorMode } = useColorMode();
   const [rotation, setRotaton] = useState(0);
 
   return (
-    <HStack justifyContent='space-between' alignItems='center' w='full' paddingTop={2}>
+    <HStack justify='space-between' w='full' pt={1}>
       <NavLink to='/'>
         <Tooltip label='Home' placement='top'>
           <IconButton
@@ -29,7 +29,7 @@ const Navigation = () => {
             color='gray.500' icon={<AiFillHome />} aria-label='home' size='sm' />
         </Tooltip>
       </NavLink>
-      <HStack>
+      <HStack >
         <NavLink to='/introduction'>
           <Tooltip label='Introduction' placement='top'>
             <IconButton
@@ -53,8 +53,8 @@ const Navigation = () => {
         </NavLink>
       </HStack>
       <Tooltip label='Color Mode' placement='top'>
-        <MotionBox 
-          animate={{rotate: rotation}}
+        <MotionBox
+          animate={{ rotate: rotation }}
           onClick={() => setRotaton(rotation + 90)}
         >
           <IconButton
