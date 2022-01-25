@@ -1,67 +1,89 @@
-import { AiFillHome, AiFillBook } from 'react-icons/ai';
-import { BsFillGrid3X3GapFill } from 'react-icons/bs';
-import { SunIcon, MoonIcon } from '@chakra-ui/icons';
-import { GiBallPyramid } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
-import { motion } from 'framer-motion'
-import { useState } from 'react';
+import { IoSunny, IoMoon } from 'react-icons/io5'
+import { useRef } from 'react'
+import { FiCommand } from 'react-icons/fi';
 import {
-  useColorMode,
   HStack,
-  Tooltip,
-  IconButton,
-  useColorModeValue,
-  Box
-} from '@chakra-ui/react';
+  Heading,
+  VStack,
+  Divider,
+  useColorMode,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  useDisclosure,
+  Button,
+  IconButton
+} from '@chakra-ui/react'
 
-const MotionBox = motion(Box);
+
+const Palette = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const btnRef = useRef()
+
+  return (
+    <>
+      <IconButton icon={<FiCommand />} ref={btnRef} variant='ghost' onClick={onOpen} />
+      <Drawer
+        isOpen={isOpen}
+        placement='right'
+        onClose={onClose}
+        finalFocusRef={btnRef}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Content</DrawerHeader>
+
+          <DrawerBody>
+            <VStack align='flex-start' p={2}>
+              <Heading size='sm' fontWeight='thin' opacity={0.6}>pages</Heading>
+              <NavLink to='/'>
+                <Button variant='ghost'>Home</Button>
+              </NavLink>
+              <NavLink to='/introduction'>
+                <Button variant='ghost'>Intruoduction</Button>
+              </NavLink>
+              <NavLink to='/about'>
+                <Button variant='ghost'>Colophon</Button>
+              </NavLink>
+            </VStack>
+            <Divider />
+            <VStack p={2} align='flex-start'>
+              <Heading size='sm' fontWeight='thin' opacity={0.6}>puzzles</Heading>
+              <NavLink to='/magic'>
+                <Button variant='ghost'>Magic Square 15</Button>
+              </NavLink>
+
+              <NavLink to='/pascal'>
+                <Button variant='ghost'>Pascal Triangle</Button>
+              </NavLink>
+            </VStack>
+            <Divider />
+            <VStack p={2} align='flex-start'>
+              <Heading size='sm' opacity={0.6} >theme</Heading>
+              <Button leftIcon={<IoMoon />} onClick={colorMode === 'light' ? toggleColorMode : null} variant='ghost'>set theme to dark</Button>
+              <Button leftIcon={<IoSunny />} onClick={colorMode === 'dark' ? toggleColorMode : null} variant='ghost'>set theme to light</Button>
+            </VStack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+};
 
 const Navigation = () => {
-  const { toggleColorMode } = useColorMode();
-  const [rotation, setRotaton] = useState(0);
 
   return (
     <HStack justify='space-between' w='full' pt={1}>
       <NavLink to='/'>
-        <Tooltip label='Home' placement='top'>
-          <IconButton
-            bg={useColorModeValue('whitealpha.500', 'whitealpha.200')}
-            color='gray.500' icon={<AiFillHome />} aria-label='home' size='sm' />
-        </Tooltip>
+        <Heading size='sm'>Mathtastic.</Heading>
       </NavLink>
-      <HStack >
-        <NavLink to='/introduction'>
-          <Tooltip label='Introduction' placement='top'>
-            <IconButton
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              color='gray.500' icon={<AiFillBook />} aria-label='Introduction' size='sm' />
-          </Tooltip>
-        </NavLink>
-        <NavLink to='magic'>
-          <Tooltip label='Magic Square' placement='top'>
-            <IconButton
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              color='gray.500' icon={<BsFillGrid3X3GapFill />} aria-label='Magic Square' size='sm' />
-          </Tooltip>
-        </NavLink>
-        <NavLink to='/pascal'>
-          <Tooltip label='Pascal Triangle' placement='top'>
-            <IconButton
-              bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              color='gray.500' icon={<GiBallPyramid />} aria-label='Pascal Triangle' size='sm' />
-          </Tooltip>
-        </NavLink>
-      </HStack>
-      <Tooltip label='Color Mode' placement='top'>
-        <MotionBox
-          animate={{ rotate: rotation }}
-          onClick={() => setRotaton(rotation + 90)}
-        >
-          <IconButton
-            colorScheme={useColorModeValue('purple', 'orange')}
-            onClick={toggleColorMode} icon={useColorModeValue(<MoonIcon />, <SunIcon />)} aria-label='Toggle theme' size='sm' />
-        </MotionBox>
-      </Tooltip>
+      <Palette />
     </HStack>
   );
 }

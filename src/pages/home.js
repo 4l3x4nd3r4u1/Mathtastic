@@ -44,9 +44,7 @@ const Home = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <Link to='/about'>
-            <Heading fontWeight='bold' size='3xl'>MATHTASTIC</Heading>
-          </Link>
+          <Heading fontWeight='bold' size='3xl'>MATHTASTIC</Heading>
           <Text fontWeight='thin' >Prueba algunos puzzles matemáticos gratuitos</Text>
         </MotionBox>
         <Stack

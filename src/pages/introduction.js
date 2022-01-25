@@ -1,7 +1,10 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion';
 import {
   Box,
+  Flex,
+  Button,
   Heading,
   useColorModeValue,
   Container,
@@ -57,6 +60,11 @@ const Introduction = () => {
         <ListItem>C (100) puede colocarse antes de D (500) para hacer 400.</ListItem>
         <ListItem>C (100) puede colocarse antes de M (1000) para obtener 900.</ListItem>
       </UnorderedList>
+      <Flex align='flex-end' direction='column' p={2}>
+        <NavLink to='/magic'>
+          <Button variant='outline'>siguiente</Button>
+        </NavLink>
+      </Flex>
     </MotionContainer>
   );
 }

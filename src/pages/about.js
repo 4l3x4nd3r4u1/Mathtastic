@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { Link } from '@chakra-ui/react'
 import {
   Flex,
   Container,
@@ -9,7 +9,6 @@ import {
   Text,
   Image,
   useColorModeValue,
-  Link
 } from '@chakra-ui/react';
 
 const MotionContainer = motion(Container);
@@ -31,40 +30,12 @@ const About = () => {
         <Stack as='main' align='flex-start' w='full' direction={['column-reverse', 'row']}>
           <VStack pl={[0, 6, 16]} align={['center', 'flex-start']}>
             <Heading my={4} size='xl'>Alrexander G.</Heading>
-            <Text
-              textAlign={['center', 'left']}
-              opacity='0.9'
-            >
-              Este sitio web está diseñado y desarrollado por Alrex GFR.
+            <Text textAlign={['center', 'left']} opacity='0.9'>Este sitio web está diseñado y desarrollado por Alrex GFR.</Text>
+            <Text textAlign={['center', 'left']} opacity='0.9'>
+              El tech stack es{' '}<Link as='a' href='https://reactjs.org/' color='blue.500'>ReactJS</Link>
+              (todas las páginas generadas estáticamente),{' '}<Link href='https://chakra-ui.com/' as='a' color='teal'>Chakra UI</Link> y está desplegada en{' '}
+              <Link as='a' href='https://vercel.com/' color={spanColor}>  Vercel  </Link>
             </Text>
-            <Text
-              textAlign={['center', 'left']}
-              opacity='0.9'
-            >
-              El tech stack es
-              <Link
-                color={spanColor}
-                href='https://reactjs.org/'
-                isExternal
-              >
-                ReactJS <ExternalLinkIcon />
-              </Link>
-              (todas las páginas generadas estáticamente),
-              <Link
-                isExternal
-                color={spanColor}
-                href='https://chakra-ui.com/'
-              >
-                Chakra UI <ExternalLinkIcon />
-              </Link>
-              y está desplegada en
-              <Link
-                color={spanColor}
-                isExternal
-                href='https://vercel.com/'
-              >
-                Vercel <ExternalLinkIcon />
-              </Link>.</Text>
           </VStack>
           <VStack w='full'>
             <MotionImage
@@ -81,6 +52,7 @@ const About = () => {
         </Stack>
       </Flex>
     </MotionContainer>
+
   );
 };
 

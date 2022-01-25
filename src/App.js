@@ -17,13 +17,13 @@ const routes = [
   { path: '/about', name: 'About', Component: About },
 ];
 
-
 function App() {
   const location = useLocation();
 
   return (
     <Container maxW='container.lg'>
       <VStack py={[2, 4, 6]} h='100vh'>
+        <Navigation />
         <AnimatePresence exitBeforeEnter initial={true}>
           <Routes location={location} key={location.pathname}>
             {
@@ -32,7 +32,6 @@ function App() {
             }
           </Routes>
         </AnimatePresence>
-        <Navigation />
       </VStack>
     </Container>
   );
